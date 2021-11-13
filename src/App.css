@@ -1,6 +1,13 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+  padding-bottom: 24px;
 }
+
+/* .App {
+  text-align: center;
+} */
 
 /* .App-logo {
   height: 40vmin;
