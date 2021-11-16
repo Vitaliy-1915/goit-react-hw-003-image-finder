@@ -20,17 +20,12 @@ export class App extends Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.imageName !== this.state.imageName) {
       this.setState({ status: "pending", images: [], page: 1 });
-
-      setTimeout(() => {
-        this.getImages();
-      }, 1000);
+      this.getImages();
     }
 
     if (prevState.page !== this.state.page) {
       this.setState({ status: "pending" });
-      setTimeout(() => {
-        this.getImages();
-      }, 1000);
+      this.getImages();
     }
 
     if (prevState.images !== this.state.images) {
