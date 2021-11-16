@@ -1,9 +1,11 @@
 import React from "react";
+import s from "../ImageGalleryItem/ImageGalleryItem.module.css";
 
-function ImageGalleryItem() {
+function ImageGalleryItem(props) {
+  const { tags, smallImage, openModal } = props;
   return (
-    <li className="gallery-item">
-      <img src="" alt="" />
+    <li className={s.galleryItem} onClick={openModal}>
+      <img className={s.galleryItemImage} src={smallImage} alt={tags} />
     </li>
   );
 }
