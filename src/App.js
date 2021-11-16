@@ -86,10 +86,10 @@ export class App extends Component {
         {this.state.status === "idle" && <h1>Start your search </h1>}
         {this.state.status === "pending" && (
           <Loader
-            type="Puff"
+            type="Watch"
             color="#00BFFF"
-            height={100}
-            width={100}
+            height={150}
+            width={150}
             timeout={3000} //3 secs
           />
         )}

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { VscSearch } from "react-icons/vsc";
 import s from "../Searchbar/Searchbar.module.css";
 
 export class Searchbar extends Component {
@@ -29,7 +30,9 @@ export class Searchbar extends Component {
       <header className={s.searchbar}>
         <form className={s.form} onSubmit={this.handelSubmit}>
           <button type="submit" className={s.button}>
-            <span className={s.buttonLabel}>Search</span>
+            <span className={s.buttonLabel}>
+              <VscSearch size="2em" />
+            </span>
           </button>
 
           <input
