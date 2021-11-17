@@ -5,6 +5,7 @@ import Searchbar from "./Components/Searchbar/Searchbar";
 import ImageGallery from "./Components/ImageGallery/ImageGallery";
 import Button from "./Components/Button/Button";
 import Modal from "./Components/Modal/Modal";
+import Api from "./Services/Api";
 
 export class App extends Component {
   state = {
@@ -37,17 +38,8 @@ export class App extends Component {
   }
 
   getImages = () => {
-    return fetch(
-      `https://pixabay.com/api/?q=${this.state.imageName}&page=${this.state.page}&key=21859800-af94843fb327cc57780ddd667&image_type=photo&orientation=horizontal&per_page=12`
-    )
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        return Promise.reject(
-          new Error(`There is no images with name ${this.state.imageName}`)
-        );
-      })
+    const { imageName, page } = this.state;
+    Api.fetchApi(imageName, page)
       .then((data) => data.hits)
       .then((images) =>
         this.setState((prevState) => ({
